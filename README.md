@@ -1,6 +1,6 @@
 # DiffuserScope
 
-Code used to simulate the DiffuserScope system in this paper: Fanglin Linda Liu, Grace Kuo, Nick Antipa, Kyrollos Yanny, and Laura Waller, "Fourier DiffuserScope: single-shot 3D Fourier light field microscopy with a diffuser," Opt. Express 28, 28969-28986 (2020)
+Code used to simulate the DiffuserScope system.
 
 The system parameters are defined in 'optical_recipe_Fourier_Olympus_3_75xdemag.m'
 
