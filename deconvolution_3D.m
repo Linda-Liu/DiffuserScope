@@ -2,9 +2,8 @@
 % Reconstruc a video from Fourier Light Field microscope
 %
 % -------------------------------------------------------------------
-addpath('../solver/')
-addpath('../solver/FISTA_proxMin')
-addpath('../../Linda_opticslib/')
+addpath('/solver/')
+addpath('/ForwardModel/')
 
 %% propare PSF stack
 
