@@ -8,10 +8,17 @@ function [uout] = propagate_angularspec(uin,L,lambda,z)
 %   lambda - wavelength
 %   z - propagation distance(meters)
 %   u2 - observation plane field
-
+  addPadding = 1;
   [M,N]=size(uin);
   dx=L/M;
   k=2*pi/lambda;
+  
+  if addPadding
+      padM = ceil(M/2);
+      uin = padarray(uin, [padM, padM], 'both');
+      M = size(uin, 1);
+      L = dx * M;
+  end
   
   U1 = fft2(uin);
   clear uin
@@ -37,5 +44,9 @@ function [uout] = propagate_angularspec(uin,L,lambda,z)
   clear U1 H
   uout = ifft2(U2);            %inverse fft, center obs field
   clear U2
+  
+  if addPadding
+      uout = uout(padM + 1: M - padM, padM + 1: M - padM);
+  end
 %  imagesc(abs(uout));axis image;title(z);
 end
